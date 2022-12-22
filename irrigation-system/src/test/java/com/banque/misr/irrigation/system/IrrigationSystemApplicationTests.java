@@ -1,4 +1,4 @@
-package com.banque.misr.irrigation.system.irrigationsystem;
+package com.banque.misr.irrigation.system;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

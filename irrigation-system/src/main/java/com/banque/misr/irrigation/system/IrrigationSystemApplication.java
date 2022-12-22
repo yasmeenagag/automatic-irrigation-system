@@ -1,4 +1,4 @@
-package com.banque.misr.irrigation.system.irrigationsystem;
+package com.banque.misr.irrigation.system;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
