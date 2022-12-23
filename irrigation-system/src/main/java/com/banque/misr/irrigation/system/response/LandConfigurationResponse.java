@@ -2,6 +2,7 @@ package com.banque.misr.irrigation.system.response;
 
 import com.banque.misr.irrigation.system.constant.AgriculturalCrop;
 import com.banque.misr.irrigation.system.constant.Insecticide;
+import com.banque.misr.irrigation.system.constant.TimeSlot;
 import com.banque.misr.irrigation.system.constant.Tractor;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
@@ -15,6 +16,8 @@ public class LandConfigurationResponse {
     private AgriculturalCrop agriculturalCrop;
     private Insecticide insecticide;
     private Tractor tractor;
+    private TimeSlot timeSlot;
+    private Long neededAmountOfWater;
 
 
 }

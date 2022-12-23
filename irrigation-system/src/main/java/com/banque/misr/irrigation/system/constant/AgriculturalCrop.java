@@ -4,7 +4,7 @@ import lombok.Getter;
 
 @Getter
 public enum AgriculturalCrop {
-    CORN(0), SOY(1), HAY(2), WHEAT(3), COTTON(4);
+    Corn(0), Soy(1), Hay(2), Wheat(3), Cotton(4);
 
     private final int id ;
     AgriculturalCrop(int id) {

@@ -2,6 +2,7 @@ package com.banque.misr.irrigation.system.request;
 
 import com.banque.misr.irrigation.system.constant.AgriculturalCrop;
 import com.banque.misr.irrigation.system.constant.Insecticide;
+import com.banque.misr.irrigation.system.constant.TimeSlot;
 import com.banque.misr.irrigation.system.constant.Tractor;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
@@ -18,6 +19,12 @@ public class LandConfigurationRequest {
     @JsonIgnore
     private Long landId;
 
+   // @NotNull(message = "neededAmountOfWater is required")
+    private Long neededAmountOfWater;
+
+ //   @NotNull(message = "timeSlot is required")
+    private TimeSlot timeSlot;
+
     @NotNull(message = "agriculturalCrop is required")
     private AgriculturalCrop agriculturalCrop;
 
@@ -26,5 +33,6 @@ public class LandConfigurationRequest {
 
     @NotNull(message = "tractor is required")
     private Tractor tractor;
+
 
 }

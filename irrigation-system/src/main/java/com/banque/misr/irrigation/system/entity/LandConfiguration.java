@@ -2,6 +2,7 @@ package com.banque.misr.irrigation.system.entity;
 
 import com.banque.misr.irrigation.system.constant.AgriculturalCrop;
 import com.banque.misr.irrigation.system.constant.Insecticide;
+import com.banque.misr.irrigation.system.constant.TimeSlot;
 import com.banque.misr.irrigation.system.constant.Tractor;
 import lombok.Data;
 
@@ -25,6 +26,13 @@ public class LandConfiguration {
 
     @Column(name = "tractor")
     private Tractor tractor;
+
+    @Column(name = "time_slot")
+    private TimeSlot timeSlot;
+
+    @Column(name = "needed_amount_of_water")
+    private Long neededAmountOfWater;
+
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "land_id", referencedColumnName = "id")
