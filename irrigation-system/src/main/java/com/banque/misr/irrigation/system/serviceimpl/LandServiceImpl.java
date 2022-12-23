@@ -1,5 +1,6 @@
 package com.banque.misr.irrigation.system.serviceimpl;
 
+import com.banque.misr.irrigation.system.constant.TimeSlot;
 import com.banque.misr.irrigation.system.entity.Land;
 import com.banque.misr.irrigation.system.entity.LandConfiguration;
 import com.banque.misr.irrigation.system.repostiory.LandRepository;
@@ -11,6 +12,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -55,6 +57,11 @@ public class LandServiceImpl implements LandService {
         }
         return response;
 
+    }
+
+    @Override
+    public List<Land> landsToBeIrrigated(TimeSlot timeSlot) {
+        return landRepository.findAllByLandConfiguration_TimeSlot(timeSlot);
     }
 
 }
