@@ -1,12 +1,10 @@
 package com.banque.misr.irrigation.system.entity;
 
 
+import com.banque.misr.irrigation.system.constant.SoilType;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -16,18 +14,37 @@ public class Land {
 
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "area")
-    private String area;
+    @Column(name = "name")
+    private String name;
 
     @Column(name = "location")
     private String location;
 
-    @Column(name = "agricultural_crop")
-    private String agriculturalCrop;
+    @Column(name = "soil_type")
+    private SoilType soilType;
 
     @Column(name = "irrigated_at")
     private Date irrigatedAt;
+
+    @Column(name = "area")
+    private Long area;
+
+    @OneToOne(mappedBy = "land")
+    private LandConfiguration landConfiguration;
+
+    @Override
+    public String toString() {
+        return "Land{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", location='" + location + '\'' +
+                ", soilType=" + soilType +
+                ", irrigatedAt=" + irrigatedAt +
+                ", area=" + area +
+                '}';
+    }
 
 }

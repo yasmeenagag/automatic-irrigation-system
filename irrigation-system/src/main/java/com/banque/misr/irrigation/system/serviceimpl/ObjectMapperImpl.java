@@ -6,7 +6,6 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
-import java.util.*;
 
 @Component
 public class ObjectMapperImpl implements ObjectMapper {
@@ -22,14 +21,6 @@ public class ObjectMapperImpl implements ObjectMapper {
 
     public <S, T> Page<T> mapPage(Page<S> source, Class<T> targetClass) {
         return source.map(element -> mapper.map(element, targetClass));
-    }
-
-    public <S, T> List<T> mapList(List<S> source, Class<T> targetClass) {
-        ArrayList<T> result = new ArrayList<>();
-        for (S element : source) {
-            result.add(mapper.map(element, targetClass));
-        }
-        return result;
     }
 
     public <D> D map(Object source, Class<D> destinationType) {
