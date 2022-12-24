@@ -9,8 +9,8 @@ Ppring boot application and in memory database h2 (contains preloaded data prese
  <br/>
  
 ### Prerequisites<br/>
-1- Install java 8
-2- install maven to your local machine
+1- Install java 8<br/><br/>
+2- install maven to your local machine<br/><br/>
 
  ## build project<br/>
  1- clone the project to your local machine or just download the jar and run it using java -jar "path to jar" <br/>
