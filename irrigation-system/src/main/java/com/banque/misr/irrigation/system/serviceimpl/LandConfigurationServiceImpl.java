@@ -64,9 +64,17 @@ public class LandConfigurationServiceImpl implements LandConfigurationService {
     private void preDictWaterAndSlot(LandConfigurationRequest landConfigurationRequest, Land landEntity, LandConfiguration landConfiguration) {
         if (landConfigurationRequest.getNeededAmountOfWater() == null) {
             landConfiguration.setNeededAmountOfWater(predictNeededAmountOfWater(landEntity, landConfiguration));
+        }else {
+            landConfiguration.setTimeSlot(landConfigurationRequest.getTimeSlot());
+
         }
+
         if (landConfigurationRequest.getTimeSlot() == null) {
             landConfiguration.setTimeSlot(predictTimeSlot(landEntity, landConfiguration));
+        }
+        else{
+            landConfiguration.setTimeSlot(landConfigurationRequest.getTimeSlot());
+
         }
     }
 

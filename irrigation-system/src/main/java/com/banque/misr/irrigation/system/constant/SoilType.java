@@ -10,7 +10,7 @@ public enum SoilType {
     Sandy(0),
     Slit(1),
     ClaySoil(2),
-    Loamy(2);
+    Loamy(3);
 
     private final int id;
 

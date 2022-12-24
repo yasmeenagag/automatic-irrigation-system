@@ -4,6 +4,8 @@ import com.banque.misr.irrigation.system.entity.TimeSlot;
 
 public interface TimeSlotService {
 
-    TimeSlot createIfNotExistTimeSlot(com.banque.misr.irrigation.system.constant.TimeSlot timeSlot);
+    TimeSlot createTimeSlotIfNotExist(com.banque.misr.irrigation.system.constant.TimeSlot timeSlot);
+
+    void save(TimeSlot timeSlotEntity);
 
 }

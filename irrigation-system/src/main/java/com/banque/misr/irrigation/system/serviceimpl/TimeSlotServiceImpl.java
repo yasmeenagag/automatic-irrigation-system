@@ -20,7 +20,7 @@ public class TimeSlotServiceImpl implements TimeSlotService {
     }
 
     @Override
-    public TimeSlot createIfNotExistTimeSlot(com.banque.misr.irrigation.system.constant.TimeSlot timeSlot) {
+    public TimeSlot createTimeSlotIfNotExist(com.banque.misr.irrigation.system.constant.TimeSlot timeSlot) {
         ZoneId defaultZoneId = ZoneId.systemDefault();
         LocalDate todayLD = LocalDate.now();
         Date today = Date.from(todayLD.atStartOfDay(defaultZoneId).toInstant());
@@ -32,8 +32,13 @@ public class TimeSlotServiceImpl implements TimeSlotService {
         TimeSlot newSlot = new TimeSlot();
         newSlot.setSlotDay(today);
         newSlot.setSlot(timeSlot);
-        newSlot.setStatus(false);
+        newSlot.setIrrigationDone(false);
         return timeSlotRepository.save(newSlot);
+    }
+
+    @Override
+    public void save(TimeSlot timeSlotEntity) {
+        timeSlotRepository.save(timeSlotEntity);
     }
 
 }

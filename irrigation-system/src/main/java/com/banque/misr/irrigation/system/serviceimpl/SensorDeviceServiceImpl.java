@@ -1,5 +1,6 @@
 package com.banque.misr.irrigation.system.serviceimpl;
 
+import com.banque.misr.irrigation.system.entity.Land;
 import com.banque.misr.irrigation.system.entity.SensorDevice;
 import com.banque.misr.irrigation.system.exception.SensorNotAvailableException;
 import com.banque.misr.irrigation.system.repostiory.SensorDeviceRepository;
@@ -9,6 +10,9 @@ import org.springframework.retry.annotation.Backoff;
 import org.springframework.retry.annotation.Recover;
 import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
+
+import java.util.Date;
+import java.util.List;
 
 @Service
 @Slf4j
@@ -31,6 +35,19 @@ public class SensorDeviceServiceImpl implements SensorDeviceService {
     public SensorDevice recover(SensorNotAvailableException e , Long id) {
         log.error("Sensor device not found ");
         return null;
+    }
+
+    @Override
+    public void startIrrigation(List<Land> landsToBeIrrigated) {
+        // check if sensor available
+        SensorDevice sensorDevice = getSensorDevice(1L);
+
+        landsToBeIrrigated.forEach(
+                land -> {
+                    land.setIrrigatedAt(new Date());
+                    log.info(land.getName() + " is irrigated at " + land.getIrrigatedAt());
+                }
+        );
     }
 
 }

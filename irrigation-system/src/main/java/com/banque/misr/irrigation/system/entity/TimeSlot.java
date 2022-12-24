@@ -21,7 +21,7 @@ public class TimeSlot {
     @Column(name = "slot_day")
     private Date slotDay;
 
-    @Column(name = "status")
-    private boolean status;
+    @Column(name = "irrigation_done")
+    private boolean irrigationDone;
 
 }
