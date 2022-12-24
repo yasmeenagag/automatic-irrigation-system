@@ -22,6 +22,6 @@ Ppring boot application and in memory database h2 (contains preloaded data prese
 2- get all land and land details <br/>
 3- update land <br/>
 4- configure land<br/>
-<br/><br/><br/>
+<br/>
 
 for simplisity please use the postman collection irrigation-system.postman_collection.json <br/>
