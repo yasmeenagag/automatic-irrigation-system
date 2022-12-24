@@ -5,7 +5,7 @@
 This is a mini project for automatic irrgation system for land based on some configuration like soil type, agricultural crop, and time solts
 <br/><br/>
 ## Technology used
-Ppring boot application and in memory database h2 (contains preloaded data presented into /resources/data.sql <br/>
+Spring boot application and in memory database h2 (contains preloaded data presented into /resources/data.sql <br/>
  <br/>
  
 ### Prerequisites<br/>
@@ -26,7 +26,7 @@ Ppring boot application and in memory database h2 (contains preloaded data prese
  
 
 ## Running the application<br/>
-After successful build for each project should run each jar " located in trget folder for each project " using java -jar "path_to_jar"
+After successful build for each project should run each jar " located in target folder for each project " using java -jar "path_to_jar"
 
 ## Automatic scheduler to get the sensor device and alert if the sensor is not available after pre configured number of retrials 
 once the sensor is available, automaict irrigation service wiil retrieve the lands that need to be irrgated on this time slot 
