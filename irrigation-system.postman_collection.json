@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "de9c176a-f699-4c63-b675-1485458de4d4",
+		"name": "irrigation-system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "configure land",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"agriculturalCrop\":\"Corn\",\r\n    \"insecticide\":\"Synthetic\",\r\n    \"tractor\":\"Military\",\r\n    \"neededAmountOfWater\": null, \r\n    \"timeSlot\" :\"Morning\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/land/configure/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"land",
+						"configure",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update land",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"test land\",\r\n  \"location\": \"loc\",\r\n  \"soilType\": \"Sandy\",\r\n  \"area\": 15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/land/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"land",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create land",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"test lan4\",\r\n  \"location\": \"loc\",\r\n  \"soilType\": \"Sandy\",\r\n  \"area\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/land",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"land"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all lands and details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/api/land",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"land"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
