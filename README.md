@@ -34,4 +34,4 @@ once the sensor is available, automaict irrigation service wiil retrieve the lan
 for simplisity there are 2 available slot for irrigation morning and evening  
 
 ## Testing
-for simplisity please use the postman collection irrigation-system.postman_collection.json <br/>
+Please refer to postman collection irrigation-system.postman_collection.json <br/>
